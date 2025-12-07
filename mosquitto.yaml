@@ -23,13 +23,13 @@ spec:
               - name: mosquitto-config
                 mountPath:  /mosquitto/config
               - name: mosquitto-secret
-                mountPath: /mosquitto/secrte  
+                mountPath: /mosquitto/secret
                 readOnly: true
         volumes:
           - name: mosquitto-config   
-            ConfigMap:
+            configMap:
               name: mosquitto-config-file    
           - name: mosquitto-secret
             secret: 
-               secretName: mosquitto-secret-file
+              secretName: mosquitto-secret-file
          
